@@ -3,10 +3,12 @@
 :root {
     --background-main: rgb(49, 49, 49);
     --light: rgb(216, 216, 236);
+    --light-t: rgba(216, 216, 236,0.7);
     --dark: rgb(77, 77, 77);
     --text: rgb(216, 216, 216);
     --text-dark: rgb(22, 22, 22);
-
+    --sanggu: rgba(250, 175, 63, 0.8);
+    --sanggu-dark: rgb(185, 124, 32);
 }
 
 /* anims */
@@ -15,14 +17,22 @@
 body {
     background-color: var(--background-main);
     font-family: 'Lato',sans-serif;
-    
+    background-image: url('https://monoc0.github.io/media/background.png');
+    background-size: 20vh;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0 10vw;
 }
 
 nav {
     background-color: var(--dark);
     padding: 0;
+    margin: 0;
     display: flex;
     align-items: stretch;
+    position: sticky;
+    z-index: 100;
+    top:0;
 }
 
 a:link, a:visited, a:active, a {
@@ -48,6 +58,116 @@ a:hover {
     filter: invert(1);
 }
 
-nav a img {
+img {
     max-width: 3em;
+    margin: 0;
+}
+
+section {
+    background-color: var(--light-t);
+    overflow: hidden;
+}
+
+#mainSec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--sanggu);
+    padding: calc(0-1em);
+    height:100vh;
+    overflow: hidden;
+}
+
+#mainSec div {
+    text-align: left;
+    width: 75%;
+}
+
+#multiTable {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1em;
+    border-top: 0.1em black solid;
+}
+
+#multiTable div{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+#multiTable div div, #multiTable div img{
+    margin: 1em;
+}
+
+#multiTable div div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+}
+
+#multiTable div div p, #multiTable div div h2 {
+    margin: 0;
+    text-align: left;
+}
+
+#multiTable div img{
+    max-width: 5em;
+    margin-right: 0;
+}
+
+a.multiTableLink, a.multiTableLink:link, a.multiTableLink:visited, a.multiTableLink:active {
+    background:initial;
+    padding: initial;
+    color: var(--text-dark);
+    transition: color 100ms;
+}
+
+a.multiTableLink:hover {
+    color: var(--text)
+}
+
+footer {
+    color: var(--text);
+    text-align: center;
+}
+
+footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div a, footer div a:link, footer div a:visited, footer div a:active {
+    background:initial;
+    padding: 0.5em;
+    border-radius: 100%;
+    width: max-content;
+    margin: 0 0.5em;
+    transition: background 100ms;
+}
+
+footer div a img {
+    filter: invert(1);
+    transition: filter 100ms;
+    width: 3em;
+    height: 3em;
+}
+
+footer div a:hover {
+    background-color: var(--light);
+}
+
+footer div a:hover img {
+    filter: invert(0);
+}
+
+footer div a:hover img.noinvert {
+    filter: invert(1);
+}
+
+footer div a img.noinvert {
+    filter: invert(0);
 }
